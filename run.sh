@@ -20,7 +20,7 @@ while :; do
 	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "upload,host=${SPEEDTEST_HOST} value=${UPLOAD}"
 	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "ping,host=${SPEEDTEST_HOST} value=${PING}"
 	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "jitter,host=${SPEEDTEST_HOST} value=${JITTER}"
-	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "share,host=${SPEEDTEST_HOST} value=${SHARE}"
+	curl -sL -XPOST "${INFLUXDB_URL}/write?db=${INFLUXDB_DB}" --data-binary "share,host=${SPEEDTEST_HOST} value=\"${SHARE}\""
 	echo "[Info][$(date)] Sleeping for ${SPEEDTEST_INTERVAL} seconds..."
 	sleep ${SPEEDTEST_INTERVAL}
 done
