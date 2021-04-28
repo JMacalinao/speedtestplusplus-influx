@@ -6,7 +6,7 @@ while :; do
 		JSON=$(./speedtestplusplus/SpeedTest --output json --share --line-type ${LINE_TYPE})
 	else
  		echo "[Info][$(date)] Starting SpeedTest++ with specific testerver ${SPEEDTEST_SERVER_URL}..."
- 		JSON=$(./speedtestplusplus/SpeedTest --test-server=${SPEEDTEST_SERVER_URL} --output json --share)
+ 		JSON=$(./speedtestplusplus/SpeedTest --test-server=${SPEEDTEST_SERVER_URL} --output json --share --line-type ${LINE_TYPE})
 	fi
 	DOWNLOAD=$(echo ${JSON} | jq -r .download)
 	UPLOAD=$(echo ${JSON} | jq -r .upload)
