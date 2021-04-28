@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep(60)
+sleep 60
 
 while :; do
 	if [[ -z "${SPEEDTEST_SERVER_URL}" ]]; then
